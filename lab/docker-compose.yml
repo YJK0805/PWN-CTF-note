@@ -1,0 +1,9 @@
+version: '3'
+services:
+  bof:
+    build: ./bof
+    volumes:
+      - ./bof/share:/home/bof:ro
+      - ./bof/xinetd:/etc/xinetd.d/bof:ro
+    ports:
+      - "10000:10005"
