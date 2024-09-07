@@ -7,3 +7,10 @@ services:
       - ./bof/xinetd:/etc/xinetd.d/bof:ro
     ports:
       - "10000:10005"
+  ret2code:
+    build: ./ret2code
+    volumes:
+      - ./ret2code/share:/home/ret2code:ro
+      - ./ret2code/xinetd:/etc/xinetd.d/ret2code:ro
+    ports:
+      - "10001:10005"
