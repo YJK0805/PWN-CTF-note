@@ -14,3 +14,10 @@ services:
       - ./ret2code/xinetd:/etc/xinetd.d/ret2code:ro
     ports:
       - "10001:10005"
+  got:
+    build: ./got
+    volumes:
+      - ./got/share:/home/got:ro
+      - ./got/xinetd:/etc/xinetd.d/got:ro
+    ports:
+      - "10002:10005"
