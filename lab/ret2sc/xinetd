@@ -1,0 +1,14 @@
+service ret2sc
+{
+    disable = no
+    type = UNLISTED
+    socket_type = stream
+    protocol = tcp
+    server = /home/ret2sc/run.sh
+    user = ret2sc
+    port = 10005
+    flags = REUSE
+    bind = 0.0.0.0
+    wait = no
+}
+
