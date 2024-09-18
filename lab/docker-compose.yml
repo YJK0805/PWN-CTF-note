@@ -21,3 +21,17 @@ services:
       - ./got/xinetd:/etc/xinetd.d/got:ro
     ports:
       - "10002:10005"
+  ret2sc:
+    build: ./ret2sc
+    volumes:
+      - ./ret2sc/share:/home/ret2sc:ro
+      - ./ret2sc/xinetd:/etc/xinetd.d/ret2sc:ro
+    ports:
+      - "10003:10005"
+  rop:
+    build: ./rop
+    volumes:
+      - ./rop/share:/home/rop:ro
+      - ./rop/xinetd:/etc/xinetd.d/rop:ro
+    ports:
+      - "10004:10005"
