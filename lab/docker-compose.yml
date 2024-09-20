@@ -35,3 +35,10 @@ services:
       - ./rop/xinetd:/etc/xinetd.d/rop:ro
     ports:
       - "10004:10005"
+  ret2libc:
+    build: ./ret2libc
+    volumes:
+      - ./ret2libc/share:/home/ret2libc:ro
+      - ./ret2libc/xinetd:/etc/xinetd.d/ret2libc:ro
+    ports:
+      - "10005:10005"
