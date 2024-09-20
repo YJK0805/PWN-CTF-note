@@ -33,6 +33,9 @@ int main(){
                 puts("Invalid choice");
                 break;
         }
+        if(choice == 3){
+            break;
+        }
     }
     char message[0x20];
     printf("Leave a message: ");
