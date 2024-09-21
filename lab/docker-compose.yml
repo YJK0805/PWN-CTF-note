@@ -42,3 +42,10 @@ services:
       - ./ret2libc/xinetd:/etc/xinetd.d/ret2libc:ro
     ports:
       - "10005:10005"
+  ret2libc_adv:
+    build: ./ret2libc_adv
+    volumes:
+      - ./ret2libc_adv/share:/home/ret2libc_adv:ro
+      - ./ret2libc_adv/xinetd:/etc/xinetd.d/ret2libc_adv:ro
+    ports:
+      - "10006:10005"
