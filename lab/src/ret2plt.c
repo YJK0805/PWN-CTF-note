@@ -6,6 +6,7 @@ int main(){
     setvbuf(stdin, 0, 2, 0);
     setvbuf(stderr, 0, 2, 0);
     long long num[10] = {0};
+    system("echo 'Welcome to the number storage!'");
     while(1){
         puts("1. Edit number");
         puts("2. Show number");
