@@ -1,0 +1,13 @@
+service ret2plt
+{
+    disable = no
+    type = UNLISTED
+    socket_type = stream
+    protocol = tcp
+    server = /home/ret2plt/run.sh
+    user = ret2plt
+    port = 10005
+    flags = REUSE
+    bind = 0.0.0.0
+    wait = no
+}

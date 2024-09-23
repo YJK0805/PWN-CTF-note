@@ -49,3 +49,10 @@ services:
       - ./ret2libc_adv/xinetd:/etc/xinetd.d/ret2libc_adv:ro
     ports:
       - "10006:10005"
+  ret2plt:
+    build: ./ret2plt
+    volumes:
+      - ./ret2plt/share:/home/ret2plt:ro
+      - ./ret2plt/xinetd:/etc/xinetd.d/ret2plt:ro
+    ports:
+      - "10007:10005"
