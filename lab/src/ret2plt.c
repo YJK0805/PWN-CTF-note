@@ -1,54 +1,19 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<unistd.h>
+
+void pop_rdi(){
+    __asm__("pop %rdi; ret;");
+}
 
 int main(){
     setvbuf(stdout, 0, 2, 0);
     setvbuf(stdin, 0, 2, 0);
     setvbuf(stderr, 0, 2, 0);
-    long long num[10] = {0};
-    system("echo 'Welcome to the number storage!'");
-    while(1){
-        puts("1. Edit number");
-        puts("2. Show number");
-        puts("3. Exit");
-        printf(">> ");
-        int choice;
-        scanf("%d", &choice);
-        switch(choice){
-            case 1:
-                printf("Index: ");
-                int idx;
-                scanf("%d", &idx);
-                if(idx < 0 || idx >= 10){
-                    puts("Invalid index");
-                    break;
-                }
-                printf("Number: ");
-                scanf("%lld", &num[idx]);
-                break;
-            case 2:
-                printf("Index: ");
-                int idx2;
-                scanf("%d", &idx2);
-                if(idx2 < 0 || idx2 >= 10){
-                    puts("Invalid index");
-                    break;
-                }
-                printf("Number: %lld\n", num[idx2]);
-                break;
-            case 3:
-                break;
-            default:
-                puts("Invalid choice");
-                break;
-        }
-        if(choice == 3){
-            break;
-        }
-    }
-    char message[0x20];
+    char message[0x10];
+    system("echo 'Welcome to challenge!'");
     printf("Leave a message: ");
-    read(0, message, 0x100);
+    gets(message);
     return 0;
 }
 
