@@ -7,6 +7,7 @@ all: src/bof.c src/ret2code.c src/got.c src/ret2sc.c src/rop.c src/ret2libc.c sr
 	gcc src/ret2libc.c -o ./ret2libc/share/ret2libc -fno-stack-protector
 	gcc src/ret2libc_adv.c -o ./ret2libc_adv/share/ret2libc_adv -fno-stack-protector
 	gcc src/ret2plt.c -o ./ret2plt/share/ret2plt -fno-stack-protector -no-pie
+	gcc src/ret2plt_adv.c -o ./ret2plt_adv/share/ret2plt_adv -fno-stack-protector -no-pie
 clean:
 	rm ./bof/share/bof
 	rm ./ret2code/share/ret2code
@@ -16,3 +17,4 @@ clean:
 	rm ./ret2libc/share/ret2libc
 	rm ./ret2libc_adv/share/ret2libc_adv
 	rm ./ret2plt/share/ret2plt
+	rm ./ret2plt_adv/share/ret2plt_adv
