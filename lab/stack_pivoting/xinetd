@@ -1,0 +1,13 @@
+service stack_pivoting
+{
+    disable = no
+    type = UNLISTED
+    socket_type = stream
+    protocol = tcp
+    server = /home/stack_pivoting/run.sh
+    user = stack_pivoting
+    port = 10005
+    flags = REUSE
+    bind = 0.0.0.0
+    wait = no
+}

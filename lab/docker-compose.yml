@@ -63,3 +63,10 @@ services:
       - ./ret2plt_adv/xinetd:/etc/xinetd.d/ret2plt_adv:ro
     ports:
       - "10008:10005"
+  stack_pivoting:
+    build: ./stack_pivoting
+    volumes:
+      - ./stack_pivoting/share:/home/stack_pivoting:ro
+      - ./stack_pivoting/xinetd:/etc/xinetd.d/stack_pivoting:ro
+    ports:
+      - "10009:10005"
