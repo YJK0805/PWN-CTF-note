@@ -1,4 +1,4 @@
-all: src/bof.c src/ret2code.c src/got.c src/ret2sc.c src/rop.c src/ret2libc.c src/ret2libc_adv.c src/ret2plt.c src/ret2plt_adv.c src/stack_pivoting.c
+all: src/bof.c src/ret2code.c src/got.c src/ret2sc.c src/rop.c src/ret2libc.c src/ret2libc_adv.c src/ret2plt.c src/ret2plt_adv.c src/stack_pivoting.c src/orw.c
 	gcc src/bof.c -o ./bof/share/bof -fno-stack-protector
 	gcc src/ret2code.c -o ./ret2code/share/ret2code -fno-stack-protector -no-pie
 	gcc src/got.c -o ./got/share/got -fno-stack-protector -no-pie
@@ -9,6 +9,7 @@ all: src/bof.c src/ret2code.c src/got.c src/ret2sc.c src/rop.c src/ret2libc.c sr
 	gcc src/ret2plt.c -o ./ret2plt/share/ret2plt -fno-stack-protector -no-pie
 	gcc src/ret2plt_adv.c -o ./ret2plt_adv/share/ret2plt_adv -fno-stack-protector -no-pie
 	gcc src/stack_pivoting.c  -o ./stack_pivoting/share/stack_pivoting -fno-stack-protector -no-pie -static
+	gcc src/orw.c -o ./orw/share/orw -fno-stack-protector -no-pie
 clean:
 	rm ./bof/share/bof
 	rm ./ret2code/share/ret2code
@@ -20,3 +21,4 @@ clean:
 	rm ./ret2plt/share/ret2plt
 	rm ./ret2plt_adv/share/ret2plt_adv
 	rm ./stack_pivoting/share/stack_pivoting
+	rm ./orw/share/orw

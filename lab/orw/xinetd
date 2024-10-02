@@ -1,0 +1,14 @@
+service orw
+{
+    disable = no
+    type = UNLISTED
+    socket_type = stream
+    protocol = tcp
+    server = /home/orw/run.sh
+    user = orw
+    port = 10005
+    flags = REUSE
+    bind = 0.0.0.0
+    wait = no
+}
+

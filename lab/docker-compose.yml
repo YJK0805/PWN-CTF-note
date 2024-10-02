@@ -70,3 +70,10 @@ services:
       - ./stack_pivoting/xinetd:/etc/xinetd.d/stack_pivoting:ro
     ports:
       - "10009:10005"
+  orw:
+    build: ./orw
+    volumes:
+      - ./orw/share:/home/orw:ro
+      - ./orw/xinetd:/etc/xinetd.d/orw:ro
+    ports:
+      - "10010:10005"
