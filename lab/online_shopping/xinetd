@@ -1,0 +1,15 @@
+service online_shopping
+{
+    disable = no
+    type = UNLISTED
+    socket_type = stream
+    protocol = tcp
+    server = /home/online_shopping/run.sh
+    user = online_shopping
+    port = 10005
+    flags = REUSE
+    bind = 0.0.0.0
+    wait = no
+}
+
+

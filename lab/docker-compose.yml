@@ -77,3 +77,17 @@ services:
       - ./orw/xinetd:/etc/xinetd.d/orw:ro
     ports:
       - "10010:10005"
+  online_shopping:
+    build: ./online_shopping
+    volumes:
+      - ./online_shopping/share:/home/online_shopping:ro
+      - ./online_shopping/xinetd:/etc/xinetd.d/online_shopping:ro
+    ports:
+      - "10011:10005"
+  uaf:
+    build: ./uaf
+    volumes:
+      - ./uaf/share:/home/uaf:ro
+      - ./uaf/xinetd:/etc/xinetd.d/uaf:ro
+    ports:
+      - "10012:10005"
